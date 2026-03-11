@@ -214,8 +214,8 @@ class TrainingSet(Dataset):
 
 class ValidationSet(Dataset):
     @jaxtyped(typechecker=beartype)
-    def __init__(self, batch_size: int, shuffle: bool):
-        super().__init__(batch_size, shuffle, "val")
+    def __init__(self, batch_size: int, shuffle: bool, path: str = "val"):
+        super().__init__(batch_size, shuffle, path)
 
     @jaxtyped(typechecker=beartype)
     def _get_pose(self, pose: Float[Tensor, "batch 9"]) -> Float[Tensor, " batch 9"]:
