@@ -166,6 +166,8 @@ def inverse_kinematics(mdh: Float[Tensor, "dofp1 3"],
     if is_analytically_solvable(mdh.unsqueeze(0)):
         try:
             joints, manipulability = analytical_inverse_kinematics(mdh.cpu(), poses.cpu())
+            joints = joints.float().to(mdh.device)
+            manipulability = manipulability.float().to(mdh.device)
         except RuntimeError:
             joints, manipulability = numerical_inverse_kinematics(mdh, poses)
     else:
