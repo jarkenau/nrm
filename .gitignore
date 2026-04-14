@@ -16,3 +16,6 @@ trace.json
 *.pt
 *.pkl
 *.txt
+*.pth
+*.pickle
+*.pdf
