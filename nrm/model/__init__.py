@@ -35,7 +35,7 @@ class Model(nn.Module):
         return self.forward(*args, **kwargs)
 
 
-from .occupancy_network import OccupancyNetwork
-from .torus import Torus
-from .shell import Shell
-from .mlp import MLP
+# from .occupancy_network import OccupancyNetwork
+# from .torus import Torus
+# from .shell import Shell
+# from .mlp import MLP
